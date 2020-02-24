@@ -6,9 +6,8 @@ attr_reader :transaction_history
     @transaction_history = []
   end
 
-  # puts Time.now.strftime("%d/%m/%Y")
-
   def add_to_history(transaction)
+    transaction[:time] = Time.new.strftime("%d/%m/%Y")
     @transaction_history << transaction
   end
 

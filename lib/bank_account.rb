@@ -11,14 +11,14 @@ class BankAccount
 
   def deposit(ammount)
     @balance += ammount
-    @transaction << {credit: ammount, balance: @balance}
+    @transaction << {credit: ammount, debit: nil, balance: @balance}
   end
 
   def withdraw(ammount)
     raise 'Cannot make withdrawal when balance is 0' if @balance == 0
 
     @balance -= ammount
-    @transaction << {debit: ammount, balance: @balance}
+    @transaction << {credit: nil, debit: ammount, balance: @balance}
   end
 
   def add_to_statement
