@@ -41,7 +41,7 @@ describe BankAccount do
     it 'Records a transaction when making a withdrawal' do
       subject.deposit(100.00)
       subject.withdraw(70.00)
-      expect(subject.transaction[1]).to include({debit: 70.00, balance: 30.00})
+      expect(subject.transaction).to include({debit: 70.00, balance: 30.00})
     end
   end
 
