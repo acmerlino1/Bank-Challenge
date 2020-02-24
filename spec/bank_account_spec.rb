@@ -8,15 +8,26 @@ describe BankAccount do
     expect(subject.balance).to eq(0)
   end
 
-  it "Deposit of 10.00 increases baance to 10.00" do
-    subject.deposit(10.00)
-    expect(subject.balance).to eq(10.00)
+  describe "#depost" do
+    
+    it "Deposit of 10.00 increases baance to 10.00" do
+      subject.deposit(10.00)
+      expect(subject.balance).to eq(10.00)
+    end
+
+    it "Continues to increase balance if 100.00 is deposited" do
+      subject.deposit(10.00)
+      subject.deposit(100.00)
+      expect(subject.balance).to eq(110.00)
+    end
   end
 
-  it "Continues to increase balance if 100.00 is deposited" do
-    subject.deposit(10.00)
-    subject.deposit(100.00)
-    expect(subject.balance).to eq(110.00)
+  describe "#withdraw" do
+    it "Balance cannot decrease below 0" do
+      expect{ subject.withdraw(50.00) }.to raise_error "Cannot withdraw from account when balance is 0"
+    end
   end
+
+
   
 end
