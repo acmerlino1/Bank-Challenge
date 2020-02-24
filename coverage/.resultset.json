@@ -72,8 +72,29 @@
         null,
         null,
         null
+      ],
+      "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/spec/bank_statement_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/lib/bank_statement.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1582548503
+    "timestamp": 1582549083
   }
 }
