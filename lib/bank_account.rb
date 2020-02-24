@@ -12,8 +12,6 @@ class BankAccount
     @balance += ammount
 
     @transactions << {credit: ammount, balance: @balance}
-
-    # puts Time.now.strftime("%d/%m/%Y")
   end
 
   def withdraw(ammount)
