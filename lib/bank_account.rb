@@ -20,4 +20,8 @@ class BankAccount
     @transaction << {debit: ammount, balance: @balance}
   end
 
+  def add_to_statement
+    @transaction.pop
+  end
+
 end
