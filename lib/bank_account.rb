@@ -1,14 +1,19 @@
 # frozen_string_literal: true
 
 class BankAccount
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   def initialize
-    @balance = 0
+    @balance = 0.00
+    @transactions = []
   end
 
   def deposit(ammount)
     @balance += ammount
+
+    @transactions << {credit: ammount, balance: @balance}
+
+    # puts Time.now.strftime("%d/%m/%Y")
   end
 
   def withdraw(ammount)
@@ -16,4 +21,5 @@ class BankAccount
 
     @balance -= ammount
   end
+
 end
