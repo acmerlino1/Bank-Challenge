@@ -12,9 +12,11 @@ describe BankStatement do
     end
   end
 
-  describe '#transaction' do
+  describe '#add_to_history' do
     it 'Adds a transaction to the transaction history' do
-      
+      transaction = {credit: 100.00, balance: 100.00}
+      subject.add_to_history(transaction)
+      expect(subject.transaction_history.count).to eq(1) 
     end
   end
   

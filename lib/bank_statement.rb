@@ -8,6 +8,10 @@ attr_reader :transaction_history
 
   # puts Time.now.strftime("%d/%m/%Y")
 
+  def add_to_history(transaction)
+    @transaction_history << transaction
+  end
+
   def print_statement
     "date || credit || debit || balance"
   end
