@@ -37,13 +37,4 @@ describe BankAccount do
     end
   end
 
-  describe '#add_to_statement' do
-    it 'Adds each transaction to the statement' do
-      subject.deposit(100.00)
-      subject.add_to_statement
-      expect(subject.transaction).to be_empty
-    end
-  end
-
-
 end

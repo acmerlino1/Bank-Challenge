@@ -23,8 +23,10 @@ class BankAccount
     add_to_statement
   end
 
+  private
+  
   def add_to_statement
-    @bank_statement.transaction_history << @transaction.pop
+    @bank_statement.add_to_history(@transaction.pop)
   end
 
 end
