@@ -53,6 +53,11 @@ describe BankAccount do
       subject.add_to_statement
       expect(subject.transaction).to be_empty
     end
+
+    it 'returns the transaction' do
+      subject.deposit(100.00)
+      expect(subject.add_to_statement).to eq({credit: 100.00, debit: nil, balance: 100.00})
+    end
   end
 
 
