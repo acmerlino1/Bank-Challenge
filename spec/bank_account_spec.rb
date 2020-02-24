@@ -2,6 +2,7 @@ require 'bank_account'
 
 describe BankAccount do
   subject { BankAccount.new }
+  let(:bank_statement) { double :bank_statement }
 
   it 'starts with a balance of 0' do
     expect(subject.balance).to eq(0)
@@ -22,11 +23,6 @@ describe BankAccount do
       subject.deposit(100.00)
       expect(subject.balance).to eq(110.00)
     end
-
-    it 'Records a transaction when making deposit' do
-      subject.deposit(100.00)
-      expect(subject.transaction).to include({credit: 100.00, debit: nil, balance: 100.00})
-    end
   end
 
   describe '#withdraw' do
@@ -39,12 +35,6 @@ describe BankAccount do
       subject.withdraw(10.00)
       expect(subject.balance).to eq(90.00)
     end
-
-    it 'Records a transaction when making a withdrawal' do
-      subject.deposit(100.00)
-      subject.withdraw(70.00)
-      expect(subject.transaction).to include({credit: nil, debit: 70.00, balance: 30.00})
-    end
   end
 
   describe '#add_to_statement' do
@@ -52,11 +42,6 @@ describe BankAccount do
       subject.deposit(100.00)
       subject.add_to_statement
       expect(subject.transaction).to be_empty
-    end
-
-    it 'returns the transaction' do
-      subject.deposit(100.00)
-      expect(subject.add_to_statement).to eq({credit: 100.00, debit: nil, balance: 100.00})
     end
   end
 

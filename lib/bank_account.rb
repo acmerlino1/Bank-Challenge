@@ -12,6 +12,7 @@ class BankAccount
   def deposit(ammount)
     @balance += ammount
     @transaction << {credit: ammount, debit: nil, balance: @balance}
+    add_to_statement
   end
 
   def withdraw(ammount)
@@ -19,10 +20,11 @@ class BankAccount
 
     @balance -= ammount
     @transaction << {credit: nil, debit: ammount, balance: @balance}
+    add_to_statement
   end
 
   def add_to_statement
-    @transaction.pop
+    @bank_statement.transaction_history << @transaction.pop
   end
 
 end
