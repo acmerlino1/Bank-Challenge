@@ -26,3 +26,6 @@ date || credit || debit || balance
 
 ## Run Program
 Clone repository.
+```
+bundle install
+```
