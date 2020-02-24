@@ -12,5 +12,11 @@ describe BankAccount do
     subject.deposit(10.00)
     expect(subject.balance).to eq(10.00)
   end
+
+  it "Continues to increase balance if 100.00 is deposited" do
+    subject.deposit(10.00)
+    subject.deposit(100.00)
+    expect(subject.balance).to eq(110.00)
+  end
   
 end
