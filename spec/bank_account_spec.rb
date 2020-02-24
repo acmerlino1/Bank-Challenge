@@ -26,6 +26,12 @@ describe BankAccount do
     it "Balance cannot decrease below 0" do
       expect{ subject.withdraw(50.00) }.to raise_error "Cannot withdraw from account when balance is 0"
     end
+
+    it "Decreases balance by 10.00" do
+      subject.deposit(100.00)
+      subject.withdraw(10.00)
+      expect(subject.balance).to eq(90.00)
+    end
   end
 
 

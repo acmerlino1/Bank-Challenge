@@ -12,5 +12,7 @@ class BankAccount
 
   def withdraw(ammount)
     raise "Cannot withdraw from account when balance is 0" if @balance == 0
+
+    @balance -= ammount
   end
 end
