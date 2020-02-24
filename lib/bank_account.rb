@@ -1,5 +1,6 @@
-class BankAccount
+# frozen_string_literal: true
 
+class BankAccount
   attr_reader :balance
 
   def initialize
@@ -11,7 +12,7 @@ class BankAccount
   end
 
   def withdraw(ammount)
-    raise "Cannot withdraw from account when balance is 0" if @balance == 0
+    raise 'Cannot make withdrawal when balance is 0' if @balance == 0
 
     @balance -= ammount
   end
