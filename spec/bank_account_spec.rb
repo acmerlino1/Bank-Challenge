@@ -9,6 +9,10 @@ describe BankAccount do
     expect(subject.balance).to eq(0)
   end
 
+  it 'Has a bank statement' do
+    expect(subject.bank_statement).to be_an_instance_of(BankStatement)
+  end
+
   describe '#depost' do
     it 'Deposit of 10.00 increases baance to 10.00' do
       subject.deposit(10.00)

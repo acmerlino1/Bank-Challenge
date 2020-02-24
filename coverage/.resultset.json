@@ -7,7 +7,11 @@
         1,
         null,
         1,
-        9,
+        10,
+        null,
+        1,
+        1,
+        null,
         null,
         1,
         1,
@@ -61,14 +65,15 @@
         null
       ],
       "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/lib/bank_account.rb": [
-        null,
-        null,
-        1,
         1,
         null,
         1,
-        8,
-        8,
+        1,
+        null,
+        1,
+        9,
+        9,
+        9,
         null,
         null,
         1,
@@ -89,6 +94,22 @@
         null,
         null
       ],
+      "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/lib/bank_statement.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        11,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/spec/bank_statement_spec.rb": [
         1,
         null,
@@ -105,24 +126,8 @@
         null,
         null,
         null
-      ],
-      "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/lib/bank_statement.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
       ]
     },
-    "timestamp": 1582557424
+    "timestamp": 1582557704
   }
 }

@@ -1,11 +1,12 @@
-# frozen_string_literal: true
+require_relative 'bank_statement'
 
 class BankAccount
-  attr_reader :balance, :transaction
+  attr_reader :balance, :transaction, :bank_statement
 
-  def initialize
+  def initialize(bank_statement = BankStatement.new)
     @balance = 0.00
     @transaction = []
+    @bank_statement = bank_statement
   end
 
   def deposit(ammount)
