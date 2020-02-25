@@ -15,7 +15,7 @@ describe BankAccount do
     expect(subject.balance).to eq(0)
   end
 
-  describe '#depost' do
+  describe '#deposit' do
     it 'Deposit of 10.00 increases balance to 10.00' do
       subject.deposit(10.00)
       expect(subject.balance).to eq(10.00)
