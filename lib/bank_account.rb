@@ -1,7 +1,7 @@
 require_relative 'bank_statement'
 
 class BankAccount
-  attr_reader :balance, :transaction, :bank_statement
+  attr_reader :balance, :transaction
 
   def initialize(bank_statement = BankStatement.new)
     @balance = 0.00
@@ -17,6 +17,8 @@ class BankAccount
 
   def withdraw(ammount)
     raise 'Cannot make withdrawal when balance is 0' if @balance == 0
+    
+    raise "There is only #{@balance} in your account" if @balance - ammount < 0
 
     @balance -= ammount
     @transaction << {credit: nil, debit: (sprintf '%.2f', ammount), balance: (sprintf '%.2f', @balance)}

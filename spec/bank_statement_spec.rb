@@ -4,10 +4,6 @@ describe BankStatement do
 
   subject { described_class.new }
 
-  # it 'has a blank transaction history when initialized' do
-  #   expect(subject.transaction_history).to be_empty
-  # end
-
   before do
     @transaction = {credit: 100.00, debit: nil, balance: 100.00}
   end

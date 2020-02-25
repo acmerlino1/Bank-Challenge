@@ -40,6 +40,11 @@ describe BankAccount do
       subject.withdraw(10.00)
       expect(subject.balance).to eq(90.00)
     end
+
+    it 'Balance cannot be negative' do
+      subject.deposit(10)
+      expect { subject.withdraw(20) }.to raise_error "There is only #{subject.balance} in your account"
+    end
   end
 
   describe '#view_statement' do
