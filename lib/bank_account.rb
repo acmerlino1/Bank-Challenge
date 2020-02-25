@@ -22,9 +22,7 @@ class BankAccount
   end
 
   def withdraw(ammount)
-    raise 'Cannot make withdrawal when balance is 0' if @balance.zero?
-
-    raise "There is only #{@balance} in your account" if
+    raise "Account balance is #{@balance}. Cannot make withdrawal." if
     (@balance - ammount).negative?
 
     @balance -= ammount
