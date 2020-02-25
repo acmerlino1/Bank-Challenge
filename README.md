@@ -34,12 +34,12 @@ $ irb
 require './lib/bank_account'
 account = BankAccount.new
 account.deposit(1000)
-account.deposit(2000)
-account.withdraw(500)
+account.withdraw(355)
+account.deposit(500)
+account.deposit(750)
+account.withdraw(50)
 account.view_statement
-```
-```
-2.6.3 :008 > account.view_statement
+
 date || credit || debit || balance
 25/02/2020 ||  || 50.00 || 1845.00
 25/02/2020 || 750.00 ||  || 1895.00
