@@ -12,7 +12,7 @@ class BankAccount
   end
 
   def deposit(ammount)
-    @balance += ammount.round(2)
+    @balance += ammount
     @transaction << {
       credit: (format '%.2f', ammount),
       debit: nil,
