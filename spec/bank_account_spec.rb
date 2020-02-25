@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bank_account'
 
 describe BankAccount do
@@ -6,7 +8,7 @@ describe BankAccount do
 
   before do
     allow(bank_statement).to receive(:add_to_history)
-    allow(bank_statement).to receive(:print_statement) {[{credit:"10.00", debit: nil, balance: "10.00", time: "25/02/2020"}]}
+    allow(bank_statement).to receive(:print_statement) { [{ credit: '10.00', debit: nil, balance: '10.00', time: '25/02/2020' }] }
   end
 
   it 'starts with a balance of 0' do
@@ -50,5 +52,4 @@ describe BankAccount do
       expect(subject.view_statement).to be_kind_of(Array)
     end
   end
-
 end
