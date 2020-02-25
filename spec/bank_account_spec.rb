@@ -1,19 +1,24 @@
 require 'bank_account'
 
 describe BankAccount do
-  subject { BankAccount.new }
   let(:bank_statement) { double :bank_statement }
+  subject { described_class.new(bank_statement) }
+
+  before do
+    allow(bank_statement).to receive(:add_to_history)
+    allow(bank_statement).to receive(:print_statement) {[{credit:"10.00", debit: nil, balance: "10.00", time: "25/02/2020"}]}
+  end
 
   it 'starts with a balance of 0' do
     expect(subject.balance).to eq(0)
   end
 
-  it 'Has a bank statement' do
-    expect(subject.bank_statement).to be_an_instance_of(BankStatement)
-  end
+  # it 'Has a bank statement' do
+  #   expect(subject.bank_statement).to be_an_instance_of(BankStatement)
+  # end
 
   describe '#depost' do
-    it 'Deposit of 10.00 increases baance to 10.00' do
+    it 'Deposit of 10.00 increases balance to 10.00' do
       subject.deposit(10.00)
       expect(subject.balance).to eq(10.00)
     end

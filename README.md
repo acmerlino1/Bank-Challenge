@@ -1,6 +1,7 @@
 # Bank-Challenge
 
 A simple app to print bank statement.
+Two classes ineract with each other. One class for the bank account, which allows the user to deposit money, withdraw money, check balance and view statement. Each transaction (either a deposit or wihdrawal), is added to the bank statement class, which is dependent on the bank account class. When the user views the bank statement, the bank statement class prints the list of all transactions.
 
 # Specification
 
@@ -22,6 +23,14 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+```
+
+## Run Tests
+Clone repository.
+
+```
+$ bundle install
+$ rspec
 ```
 
 ## Run Program
