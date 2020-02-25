@@ -10,8 +10,8 @@ class BankAccount
   end
 
   def deposit(ammount)
-    @balance += ammount
-    @transaction << {credit: ammount, debit: nil, balance: @balance}
+    @balance += ammount.round(2)
+    @transaction << {credit: (sprintf '%.2f', ammount), debit: nil, balance: (sprintf '%.2f', @balance)}
     add_to_statement
   end
 
@@ -19,12 +19,16 @@ class BankAccount
     raise 'Cannot make withdrawal when balance is 0' if @balance == 0
 
     @balance -= ammount
-    @transaction << {credit: nil, debit: ammount, balance: @balance}
+    @transaction << {credit: nil, debit: (sprintf '%.2f', ammount), balance: (sprintf '%.2f', @balance)}
     add_to_statement
   end
 
+  def view_statement
+    @bank_statement.print_statement
+  end
+
   private
-  
+
   def add_to_statement
     @bank_statement.add_to_history(@transaction.pop)
   end

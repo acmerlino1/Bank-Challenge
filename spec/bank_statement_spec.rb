@@ -6,12 +6,6 @@ describe BankStatement do
     expect(subject.transaction_history).to be_empty
   end
 
-  describe '#print_statement' do
-    it 'prints date || credit || debit || balance if no transactions' do
-      expect(subject.print_statement).to eq("date || credit || debit || balance")
-    end
-  end
-
   describe '#add_to_history' do
     it 'Adds a transaction to the transaction history' do
       transaction = {credit: 100.00, debit: nil, balance: 100.00}
