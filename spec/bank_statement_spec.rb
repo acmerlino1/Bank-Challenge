@@ -18,7 +18,7 @@ describe BankStatement do
       time_now = Time.now.strftime("%d/%m/%Y")
       allow(Time).to receive(:now).and_return(time_now)
       subject.add_to_history(@transaction)
-      expect(subject.transaction_history).to include({time: @time_now, credit: 100.00, debit: nil, balance: 100.00}) 
+      expect(subject.transaction_history).to include({time: time_now, credit: 100.00, debit: nil, balance: 100.00}) 
     end
   end
 
