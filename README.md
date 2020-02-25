@@ -1,15 +1,10 @@
 # Bank-Challenge
 
-A simple app to print bank statement.
-Two classes ineract with each other. One class for the bank account, which allows the user to deposit money, withdraw money, check balance and view statement. Each transaction (either a deposit or wihdrawal), is added to the bank statement class, which is dependent on the bank account class. When the user views the bank statement, the bank statement class prints the list of all transactions.
+An app to manage a bank account through bank statements, with functionality such as making deposits, withdrawing, viewing balance and generating bank statements.
+
+There are two key classes. A Bank statement and Bank account. A bank statement is required to instantiate a bank account, which allows the user to deposit money, withdraw money, check balance and view statement. Each transaction (deposit or wihdrawal), is added to the bank statement class. When the user views the bank statement, the bank statement class prints the list of all transactions.
 
 # Specification
-
-## Requirements
-You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
-Deposits, withdrawal.
-Account statement (date, amount, balance) printing.
-Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 ## Acceptance criteria
 **Given** a client makes a deposit of 1000 on 10-01-2012
