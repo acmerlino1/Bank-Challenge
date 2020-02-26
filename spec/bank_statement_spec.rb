@@ -8,7 +8,7 @@ describe BankStatement do
   before do
     @time_now = Time.now.strftime('%d/%m/%Y')
     allow(Time).to receive(:now).and_return(@time_now)
-    @transaction = { credit: 100.00, debit: nil, balance: 100.00, time: @time_now}
+    @transaction = { credit: 100.00, debit: nil, balance: 100.00, time: @time_now }
   end
 
   describe '#add_to_history' do
