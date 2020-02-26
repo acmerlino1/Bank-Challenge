@@ -13,7 +13,6 @@ class BankStatement
 
   def print_statement
     statement = ['date || credit || debit || balance']
-    # puts 'date || credit || debit || balance'
     @transaction_history.reverse.each do |transaction|
       statement.push "#{transaction[:time]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}"
     end
