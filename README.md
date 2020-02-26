@@ -34,6 +34,7 @@ Clone repository.
 $ bundle install
 $ irb
 ```
+## Example of Running the Program
 ```
 require './lib/bank_account'
 account = BankAccount.new
