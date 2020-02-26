@@ -8,17 +8,16 @@ class BankStatement
   end
 
   def add_to_history(transaction)
-    transaction[:time] = Time.new.strftime('%d/%m/%Y')
     @transaction_history << transaction
   end
 
   def print_statement
-    puts 'date || credit || debit || balance'
+    statement = ['date || credit || debit || balance']
+    # puts 'date || credit || debit || balance'
     @transaction_history.reverse.each do |transaction|
-      puts "#{transaction[:time]} ||
-            #{transaction[:credit]} ||
-            #{transaction[:debit]} ||
-            #{transaction[:balance]}"
+      statement.push "#{transaction[:time]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}"
     end
+    puts statement
+    return statement
   end
 end

@@ -6,7 +6,7 @@ class BankAccount
   attr_reader :balance, :transaction
 
   def initialize(bank_statement = BankStatement.new)
-    @balance = 0.00
+    @balance = 0
     @bank_statement = bank_statement
   end
 
@@ -15,7 +15,8 @@ class BankAccount
     transaction = {
       credit: (format '%.2f', ammount),
       debit: nil,
-      balance: (format '%.2f', @balance)
+      balance: (format '%.2f', @balance),
+      time: transaction_date
     }
     add_to_statement(transaction)
   end
@@ -28,7 +29,8 @@ class BankAccount
     transaction = {
       credit: nil,
       debit: (format '%.2f', ammount), 
-      balance: (format '%.2f', @balance)
+      balance: (format '%.2f', @balance),
+      time: transaction_date
     }
     add_to_statement(transaction)
   end
@@ -41,5 +43,9 @@ class BankAccount
 
   def add_to_statement(transaction)
     @bank_statement.add_to_history(transaction)
+  end
+
+  def transaction_date
+    Time.new.strftime('%d/%m/%Y')
   end
 end

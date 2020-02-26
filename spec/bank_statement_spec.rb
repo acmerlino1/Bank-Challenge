@@ -6,7 +6,9 @@ describe BankStatement do
   subject { described_class.new }
 
   before do
-    @transaction = { credit: 100.00, debit: nil, balance: 100.00 }
+    @time_now = Time.now.strftime('%d/%m/%Y')
+    allow(Time).to receive(:now).and_return(@time_now)
+    @transaction = { credit: 100.00, debit: nil, balance: 100.00, time: @time_now}
   end
 
   describe '#add_to_history' do
@@ -16,11 +18,9 @@ describe BankStatement do
     end
 
     it 'Adds a transaction to history with correct format' do
-      time_now = Time.now.strftime('%d/%m/%Y')
-      allow(Time).to receive(:now).and_return(time_now)
       subject.add_to_history(@transaction)
       expect(subject.transaction_history).to include(
-        time: time_now,
+        time: @time_now,
         credit: 100.00,
         debit: nil,
         balance: 100.00
@@ -29,8 +29,10 @@ describe BankStatement do
   end
 
   describe '#print_statement' do
-    it 'prints statement' do
+    it "prints" do
+      subject.add_to_history(@transaction)
       expect(subject.print_statement).to be_kind_of(Array)
     end
   end
+
 end
