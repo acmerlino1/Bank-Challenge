@@ -35,10 +35,6 @@ class BankAccount
     add_to_statement(transaction)
   end
 
-  def view_statement
-    @bank_statement.print_statement
-  end
-
   private
 
   def add_to_statement(transaction)

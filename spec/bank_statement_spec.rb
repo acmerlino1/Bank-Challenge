@@ -28,11 +28,4 @@ describe BankStatement do
     end
   end
 
-  describe '#print_statement' do
-    it "prints" do
-      subject.add_to_history(@transaction)
-      expect(subject.print_statement).to be_kind_of(Array)
-    end
-  end
-
 end

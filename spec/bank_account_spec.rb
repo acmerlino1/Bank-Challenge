@@ -44,12 +44,4 @@ describe BankAccount do
       expect { subject.withdraw(20) }.to raise_error "Account balance is #{subject.balance}. Cannot make withdrawal."
     end
   end
-
-  describe '#view_statement' do
-    it 'Prints account statement in correct format' do
-      subject.deposit(100.00)
-      subject.withdraw(10.00)
-      expect(subject.view_statement).to be_kind_of(Array)
-    end
-  end
 end

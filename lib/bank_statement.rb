@@ -20,6 +20,5 @@ class BankStatement
       statement.push(single_transaction)
     end
     puts statement
-    return statement
   end
 end
