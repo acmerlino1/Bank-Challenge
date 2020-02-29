@@ -2,9 +2,14 @@ require 'transaction'
 
 describe Transaction do 
 
+  let(:bank_statement) { double :bank_statement }
+  subject { described_class.new(bank_statement) }
+
+
   before do
     @time_now = Time.now.strftime('%d/%m/%Y')
     allow(Time).to receive(:now).and_return(@time_now)
+    allow(bank_statement).to receive(:add_to_history)
   end
 
   describe '#make_transaction' do
