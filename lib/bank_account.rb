@@ -1,24 +1,18 @@
 # frozen_string_literal: true
 
-require_relative 'bank_statement'
+require_relative 'transaction'
 
 class BankAccount
-  attr_reader :balance, :transaction
+  attr_reader :balance
 
-  def initialize(bank_statement = BankStatement.new)
+  def initialize(transaction = Transaction.new)
     @balance = 0
-    @bank_statement = bank_statement
+    @transaction = transaction
   end
 
   def deposit(ammount)
     @balance += ammount
-    transaction = {
-      credit: (format '%.2f', ammount),
-      debit: nil,
-      balance: (format '%.2f', @balance),
-      time: transaction_date
-    }
-    add_to_statement(transaction)
+    make_transaction(ammount, @balance)
   end
 
   def withdraw(ammount)
@@ -26,22 +20,12 @@ class BankAccount
     (@balance - ammount).negative?
 
     @balance -= ammount
-    transaction = {
-      credit: nil,
-      debit: (format '%.2f', ammount), 
-      balance: (format '%.2f', @balance),
-      time: transaction_date
-    }
-    add_to_statement(transaction)
+    make_transaction(-ammount, @balance)
   end
 
   private
 
-  def add_to_statement(transaction)
-    @bank_statement.add_to_history(transaction)
-  end
-
-  def transaction_date
-    Time.new.strftime('%d/%m/%Y')
+  def make_transaction(ammount, balance)
+    @transaction.make_transaction(ammount, balance)
   end
 end
