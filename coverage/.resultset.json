@@ -137,16 +137,6 @@
           2,
           null,
           null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          0,
-          null,
           null
         ]
       },
@@ -197,6 +187,16 @@
       "/Users/chrisdavidmerlino/Projects/tech-tests/Bank-Challenge/lib/display.rb": {
         "lines": [
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -236,6 +236,6 @@
         ]
       }
     },
-    "timestamp": 1583000509
+    "timestamp": 1583000604
   }
 }
