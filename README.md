@@ -2,7 +2,7 @@
 
 An app to manage a bank account through bank statements, with functionality such as making deposits, withdrawing, viewing balance and generating bank statements.
 
-There are two key classes. A Bank statement and Bank account. A bank statement is required to instantiate a bank account, which allows the user to deposit money, withdraw money, check balance and view statement. Each transaction (deposit or wihdrawal), is added to the bank statement class. When the user views the bank statement, the bank statement class prints the list of all transactions.
+There are four key classes. A Bank statement, Bank account, Transactions and Display. A bank statement is required to instantiate a bank account, which allows the user to deposit money, withdraw money, check balance. Each transaction (deposit or wihdrawal), is added to the bank statement class.
 
 # Specification
 
