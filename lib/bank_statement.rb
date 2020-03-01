@@ -3,13 +3,13 @@
 class BankStatement
   attr_reader :transaction_history
 
-  def initialize(display = Display.new)
+  def initialize
     @transaction_history = []
-    @display = display
   end
 
   def add_to_history(transaction)
     @transaction_history << transaction
+    p @transaction_history
   end
 
 end

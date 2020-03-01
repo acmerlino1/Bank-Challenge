@@ -3,23 +3,21 @@
 require 'bank_account'
 
 describe BankAccount do
-  let(:transaction) { double :transaction }
-  subject { described_class.new(transaction) }
+  let(:statement) { double :statement }
+  subject { described_class.new(statement) }
 
   before do
-    allow(transaction).to receive(:make_transaction)
+    allow(statement).to receive(:add_to_history)
   end
 
   describe '#deposit' do
     it 'Deposit of 10.00 increases balance to 10.00' do
-      subject.deposit(10.00)
-      expect(subject.balance).to eq(10.00)
+      expect(subject.deposit(10.00)).to eq(10.00)
     end
 
     it 'Continues to increase balance if 100.00 is deposited' do
       subject.deposit(10.00)
-      subject.deposit(100.00)
-      expect(subject.balance).to eq(110.00)
+      expect(subject.deposit(100.00)).to eq(110.00)
     end
   end
 
@@ -30,8 +28,7 @@ describe BankAccount do
 
     it 'Decreases balance by 10.00' do
       subject.deposit(100.00)
-      subject.withdraw(10.00)
-      expect(subject.balance).to eq(90.00)
+      expect(subject.withdraw(10.00)).to eq(90.00)
     end
 
     it 'Balance cannot be negative' do

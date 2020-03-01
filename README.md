@@ -37,13 +37,15 @@ $ irb
 ## Example of Running the Program
 ```
 require './lib/bank_account'
+require './lib/display'
 account = BankAccount.new
+display = Display.new
 account.deposit(1000)
 account.withdraw(355)
 account.deposit(500)
 account.deposit(750)
 account.withdraw(50)
-account.view_statement
+display.display(account.statement)
 
 date || credit || debit || balance
 25/02/2020 ||  || 50.00 || 1845.00

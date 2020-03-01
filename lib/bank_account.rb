@@ -1,31 +1,35 @@
 # frozen_string_literal: true
 
 require_relative 'transaction'
+require_relative 'bank_statement'
+
 
 class BankAccount
-  attr_reader :balance
+  attr_reader :balance, :statement
 
-  def initialize(transaction = Transaction.new)
+  def initialize(statement = BankStatement.new)
     @balance = 0
-    @transaction = transaction
+    @statement = statement
   end
 
-  def deposit(ammount)
-    @balance += ammount
-    make_transaction(ammount, @balance)
+  def deposit(amount)
+    @balance += amount
+    @statement.add_to_history(make_transaction(amount, @balance))
+    @balance
   end
 
-  def withdraw(ammount)
+  def withdraw(amount)
     raise "Account balance is #{@balance}. Cannot make withdrawal." if
-    (@balance - ammount).negative?
+    (@balance - amount).negative?
 
-    @balance -= ammount
-    make_transaction(-ammount, @balance)
+    @balance -= amount
+    @statement.add_to_history(make_transaction(-amount, @balance))
+    @balance
   end
 
   private
 
-  def make_transaction(ammount, balance)
-    @transaction.make_transaction(ammount, balance)
+  def make_transaction(amount, balance)
+    Transaction.new(amount, balance, Time.now)
   end
 end
