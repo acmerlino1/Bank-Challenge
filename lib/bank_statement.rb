@@ -9,7 +9,6 @@ class BankStatement
 
   def add_to_history(transaction)
     @transaction_history << transaction
-    p @transaction_history
   end
 
 end
